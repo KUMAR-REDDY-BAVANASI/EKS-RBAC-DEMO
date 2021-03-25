@@ -166,27 +166,37 @@ In a real-world scenario, you will need to provide permissions to a user to acce
 
 rules:
 - apiGroups: [""]
+
   resources: ["events"]
+  
   verbs: ["get", "list", "watch"]
   
   
 - apiGroups: [""]
+
   resources: ["pods", "pods/log", "pods/exec"]
+  
   verbs: ["list", "get", "create", "update", "delete"]
   
   
 - apiGroups: ["extensions", "apps"]
+
   resources: ["deployments"]
+  
   verbs: ["list", "get", "create", "update", "delete"]
   
   
 - apiGroups: [""]
+
   resources: ["configmaps"]
+  
   verbs: ["list", "get", "create", "update", "delete"]
   
   
 - apiGroups: [""]
+
   resources: ["secrets"]
+  
   verbs: ["list", "get", "create", "update", "delete"]
   
   
