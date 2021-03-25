@@ -58,15 +58,25 @@ Step5:  With the role configured you need to create a corresponding RoleBinding
 
 
 kind: RoleBinding
+
 metadata:
+
   name: kumar-role-binding
+  
 subjects:
+
 - kind: User
+- 
   name: kumar
+  
   apiGroup: rbac.authorization.k8s.io
+  
 roleRef:
+
   kind: Role
+  
   name: kumar-role
+  
   apiGroup: rbac.authorization.k8s.io
 
 
@@ -89,10 +99,15 @@ $ kubectl edit configmap aws-auth -n kube-system
 Add the user under the mapUsers as an item in the aws-auth ConfigMap:
 
 data:
+
   mapUsers: |
+  
     - userarn: arn:aws:iam::123456789012:user/eks-user
+    
       username: kumar
+      
       groups:
+      
       - kumar-role
 
 
