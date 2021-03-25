@@ -1,0 +1,39 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::533879058086:role/eksctl-stg-nodegroup-workers-NodeInstanceRole-1U6QHPLUOFGU4
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - userarn: arn:aws:iam::533879058086:user/kumar
+      username: kumar
+      groups:
+        - kumar-role1
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-03-04T16:22:49Z"
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:mapRoles: {}
+    manager: vpcLambda
+    operation: Update
+    time: "2021-03-04T16:22:49Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        f:mapUsers: {}
+    manager: kubectl-edit
+    operation: Update
+    time: "2021-03-24T05:03:14Z"
+  name: aws-auth
+  namespace: kube-system
+  resourceVersion: "6707739"
+  selfLink: /api/v1/namespaces/kube-system/configmaps/aws-auth
+  uid: e0dc67c5-2c8c-47e4-9eb4-c97faa2a402a
