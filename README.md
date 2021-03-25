@@ -125,8 +125,12 @@ $ kubectl get pods --as kumar
 The --as flag impersonates the request to Kubernetes as the given user. You can use this flag to test permissions for any given user.
 
 
+
+
 Thank You,
 kumar
+
+
 
 
 
@@ -164,18 +168,28 @@ rules:
 - apiGroups: [""]
   resources: ["events"]
   verbs: ["get", "list", "watch"]
+  
+  
 - apiGroups: [""]
   resources: ["pods", "pods/log", "pods/exec"]
   verbs: ["list", "get", "create", "update", "delete"]
+  
+  
 - apiGroups: ["extensions", "apps"]
   resources: ["deployments"]
   verbs: ["list", "get", "create", "update", "delete"]
+  
+  
 - apiGroups: [""]
   resources: ["configmaps"]
   verbs: ["list", "get", "create", "update", "delete"]
+  
+  
 - apiGroups: [""]
   resources: ["secrets"]
   verbs: ["list", "get", "create", "update", "delete"]
+  
+  
 Add the above permissions to the role.yaml file and apply the changes, using kubectl apply -f.
 
 '''
