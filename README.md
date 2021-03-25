@@ -13,9 +13,13 @@ Step2:  Configure the AWS CLI
 =============================
 
 $ aws configure --profile kumar
+
 AWS Access Key ID [None]: XXXXXXXXXXXXXXXXXXXXXX
+
 AWS Secret Access Key [None]: XXXXXXXXXXXXXXXXXXXXXXXX
+
 Default region name [None]: us-east-1
+
 Default output format [None]: text
 
 Step3:  aws sts get-caller-identity
