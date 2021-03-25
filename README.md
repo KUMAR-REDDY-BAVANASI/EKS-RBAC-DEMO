@@ -38,12 +38,19 @@ This snippet of code creates a role named eks-user-role with a modest list permi
 resource in your cluster.
 
 apiVersion: rbac.authorization.k8s.io/v1
+
 kind: Role
+
 metadata:
+
   name: kumar-role
+  
 rules:
+
 - apiGroups: [""]
+- 
   resources: ["pods","secrets"]
+  
   verbs: ["list","get","watch"]
 
 
